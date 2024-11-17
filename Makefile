@@ -1,8 +1,5 @@
 all:main_menu asciiclick 
 
-clear:
-	rm -rf build
-	mkdir build
 
 asciiclick: ./asciiclick/main.cpp 
 	g++ ./asciiclick/main.cpp -I./VA-untils/include -o ./build/asciiclick

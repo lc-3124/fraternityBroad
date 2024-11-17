@@ -71,13 +71,14 @@ void initoptions()
 void drawer ()
 {
     //print the welcome-words 
-    mvprintb_color(0,0,_16color::BLUE,BackGroundcolor,"你好，Ts");
+    mvprintb_color(1,0,_16color::BLUE,BackGroundcolor,"你好，Ts");
     gettime();
     char *nowtime = get_return();
-    mvprintb_color(1,0,_16color::RED,BackGroundcolor,nowtime);
+    mvprintb_color(1,20,_16color::RED,BackGroundcolor,nowtime);
 
     //print the options
-    mvprintb(2,0,OptionsList.at(0).title);
+    mvprintb(2,0,"你已成功连接，面板尚在开发中");
+    //mvprintb(2,0,OptionsList.at(0).title);
     //print other things
     mvprintb_color(3,0,_16color::GREEN,BackGroundcolor,"按下<P>退出");
 
@@ -97,7 +98,9 @@ void chooseer()
 
         if(vk!=-1)
         {
-            if(vk=='p'||vk=='P')break;            
+            if(vk=='p'||vk=='P'){
+            break;
+            };            
     }
 }
 }
@@ -110,6 +113,6 @@ int main()
     //drawer();
     reset_term();
     MyTerm->enableEcho();
-    delete MyTerm;
+    delete MyTerm; 
     return 0;
 }
