@@ -1,0 +1,28 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/x86_64-linux-gnu-g++-12",
+      "-c",
+      "./main_menu/main.cpp",
+      "-I./VA-untils/include",
+      "-o",
+      "./build/main_menu"
+    ],
+    "directory": "/home/lc3124/works/fraternityBroad",
+    "file": "/home/lc3124/works/fraternityBroad/./main_menu/main.cpp",
+    "output": "/home/lc3124/works/fraternityBroad/./main_menu/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-linux-gnu-g++-12",
+      "-c",
+      "./asciiclick/main.cpp",
+      "-I./VA-untils/include",
+      "-o",
+      "./build/asciiclick"
+    ],
+    "directory": "/home/lc3124/works/fraternityBroad",
+    "file": "/home/lc3124/works/fraternityBroad/./asciiclick/main.cpp",
+    "output": "/home/lc3124/works/fraternityBroad/./asciiclick/main.o"
+  }
+]
