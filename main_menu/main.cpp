@@ -24,6 +24,9 @@ int ScreenRows,ScreenCols;
 
 void init_term()
 {
+
+    MyTerm->fastOutput(vacc::_cur_hide());
+    MyTerm->fastOutput(vacc::_clear());
 //MyTerm->disableEcho();
     //Get the size of Terminal size 
     MyTerm->getTerminalSize(ScreenRows,ScreenCols);
@@ -33,6 +36,7 @@ void init_term()
 }
 void reset_term()
 {
+MyTerm->fastOutput(vacc::_cur_show());
 MyTerm->enableConsoleBuffering();
 MyTerm->enableEcho();
 }
@@ -80,7 +84,8 @@ void drawer ()
     mvprintb(2,0,"你已成功连接，面板尚在开发中");
     //mvprintb(2,0,OptionsList.at(0).title);
     //print other things
-    mvprintb_color(3,0,_16color::GREEN,BackGroundcolor,"按下<P>退出");
+    mvprintb_color(3,0,_16color::GREEN,BackGroundcolor,"按下<P>退出   ");
+    mvprintb(3,0,"");
 
     flushb();
 }
@@ -93,7 +98,7 @@ void chooseer()
 
    vk =  MyTerm->keyPressed();
 
-        usleep(1000);  
+        usleep(3000);  
         drawer();
 
         if(vk!=-1)
@@ -107,12 +112,12 @@ void chooseer()
 
 int main()
 {
-    //init_term();
+    init_term();
     initoptions();
     chooseer();
     //drawer();
     reset_term();
     MyTerm->enableEcho();
-    delete MyTerm; 
+    delete MyTerm;
     return 0;
 }

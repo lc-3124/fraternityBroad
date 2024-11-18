@@ -70,8 +70,6 @@ void mvprintb_color(int y,int x,color256 front,color256 back,char *str)
 }
 void flushb()
 {
-    MyTerm->fastOutput(vacc::_set_color256(Frontcolor,BackGroundcolor));
-    MyTerm->fastOutput(vacc::_clear());
     MyTerm->fastOutput(vacc::_cur_moveto(0,0));
     MyTerm->fastOutput(ScreenBuffer.c_str());
     ScreenBuffer.clear();
